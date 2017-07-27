@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="app">
+    <head>
+       
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+        <!-- Custom stylesheet -->
+        <link href="custompage/custompage.css" rel='stylesheet' />
+        <link href="style.css" rel="stylesheet" type="text/css">
+
+        <!-- Angular -->
+        <script src="https://code.angularjs.org/1.4.6/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.4.6/angular-route.min.js"></script>
+
+        <title>Responsive ng-view viewport</title>
+        
+    </head>
+    <body ng-controller="appCtrl">
+
+        <div class="my-header">
+            <button class="btn btn-primary" ng-click="toggleLeftNav()">Show/Hide Left-Nav</button>
+            <button class="btn btn-primary" ng-click="toggleFooter()">Show/Hide Footer</button>
+        </div>
+        <div class="my-content">
+            <div class="my-left-nav hidden-sm-down" ng-show="leftNav">
+                <h2>Left-nav</h2>
+            </div>
+            <div class="my-main-content" ng-view>
+
+            </div>
+        </div>
+        <div class="my-footer" ng-show="footer">
+            <h2>Footer</h2>
+        </div>
+
+    </body>
+    
+    <script src="app.js"></script>
+    <script src="custompage/custompage.js"></script>
+    
+</html>
